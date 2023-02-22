@@ -61,7 +61,7 @@ In `for_loop/src/main/scala/ForLoop.scala`, implement a control-flow structure c
 
 ```
 var i = 0;
-for_loop(i = 0)(i < 10)(i += 2) {
+for_loop((i = 0))(i < 10)(i += 2) {
   println(i);
 }
 ```
@@ -78,7 +78,8 @@ appearing on a separate line).
 
 Note that, unfortunately, we don't have a good way to include the variable
 definition as part of the for loop. The user has to declare the variable outside
-the for loop, then (re-)initialize it as part of the for loop.
+the for loop, then (re-)initialize it as part of the for loop, surrounding the assignment
+with parentheses.
 
 ## Part 3: `while_c` and `continue`
 
