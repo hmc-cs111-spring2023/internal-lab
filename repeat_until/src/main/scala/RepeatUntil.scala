@@ -1,6 +1,11 @@
 @main
 def main() =
-  // define the new control-flow structure here
+  class repeat(body: => Unit) {
+    def until(condition: => Boolean) =
+      while (!condition) {
+        body
+      }
+  }
 
   var i = 0
   repeat {

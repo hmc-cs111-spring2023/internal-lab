@@ -1,6 +1,18 @@
 @main
 def main() =
-  // define the new control-flow structures here
+  object ContinueException extends Exception
+
+  def continue = throw ContinueException
+
+  def while_c(condition: => Boolean)(body: => Unit): Unit = {
+    try {
+      while (condition) {
+        body
+      }
+    } catch {
+      case ContinueException => while_c(condition)(body)
+    }
+  }
 
   var i = -1
 
